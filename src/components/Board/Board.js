@@ -1,5 +1,5 @@
 import React from "react";
-import Tile from "../Tile/Tile";
+import Tile from "../Tile";
 
 import "./Board.css";
 
@@ -9,13 +9,13 @@ const Board = (props) => {
     gridTemplateRows: `repeat(${Math.sqrt(props.numTiles)}, 1fr)`,
   };
 
-  const mapTiles = props.tiles.map((tile) => {
+  const tiles = props.tiles.map((tile) => {
     <Tile {...tile} />;
   });
 
   return (
     <div className="Board" style={gridConfig}>
-      {mapTiles}
+      {tiles}
     </div>
   );
 };
